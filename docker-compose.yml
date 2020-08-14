@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  smeter-dev:
+    build: 
+      context: ./Dockerfiles
+      dockerfile: Dockerfile.smeter-dev
+    container_name: smeter-dev
+    image: smeter-dev:latest
+    volumes:
+      - repo:/SmartMeterRepo
+      - log:${APP_ROOT}/log
+      - src:${APP_ROOT}/src
+      - scripts:${APP_ROOT}/scripts
+      - docs:${APP_ROOT}/docs
+      - docs_site:${APP_ROOT}/docs_site
+      - server:${APP_ROOT}/server
+      - raspi:${APP_ROOT}/raspi      
+    stdin_open: true
+    tty: true
+
+#
+# Volume definition
+# 
+volumes:
+  repo:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/
+      o: bind
+  log:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/log
+      o: bind
+  src:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/src
+      o: bind
+  scripts:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/scripts
+      o: bind
+  docs:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/docs
+      o: bind
+  docs_site:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/docs_site
+      o: bind
+  server:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/server
+      o: bind
+  raspi:
+    driver_opts:
+      type: none
+      device: ${VOL_DIR}/raspi
+      o: bind

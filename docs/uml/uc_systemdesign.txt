@@ -1,0 +1,16 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor User
+actor Camera
+
+rectangle SmartMeter {
+    (Take picture) -- Camera
+    User -- (Run consumption report)
+    (Run consumption report) .> (Perform OCR on picture) : include
+}
+@enduml

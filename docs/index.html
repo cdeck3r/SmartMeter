@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.62.0" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="
+		
+		Engineering Documentation
+		"> 
+    
+	<meta name="author" content=" cdeck3r ">  
+    <base href="https://cdeck3r.com/SmartMeter/">
+    <title>SmartMeter</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+    .navbar {
+    border-color: #e7e7e7;
+}
+
+.content-section-a,
+footer,
+.navbar {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.navbar a:link,
+.navbar-default .navbar-nav>li>a {
+  color: #777;
+}
+
+.navbar a:hover,
+.navbar-default .navbar-nav>li>a:hover {
+  color: rgb(51, 51, 51);
+}
+
+.content-section-b {
+  background-color: white;
+  color: #333;
+}
+
+body {
+  color: rgb(51, 51, 51);
+}
+
+.header-container h1,
+.header-container h2,
+.header-container h3,
+.header-container h4 {
+  color: rgb(51, 51, 51);
+}
+ 
+  </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        
+        <div class="navbar-header page-scroll" style="margin-left: -15px;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-right: 0px;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" style="padding-left: 0px;margin-left: 0px;" href="#intro">
+            SmartMeter</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+				
+				<li>
+				  <a class="page-scroll" href="//github.com/cdeck3r/SmartMeter">
+                    Github
+                  </a>
+                </li>
+				 
+				
+				<li>
+					<a class="page-scroll" href="//cdeck3r.com">
+                    cdeck3r
+					</a>
+                </li>
+				 
+            </ul>
+        </div>
+        
+    </div>
+    
+</nav>
+
+<section id="intro">
+	
+	<div class="intro-header">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+				
+					<div class="intro-message">
+						<h1>SmartMeter</h1>
+						<h3>Engineering Documentation</h3>
+						<hr class="intro-divider">
+
+						<ul class="list-inline intro-social-buttons">
+						
+
+
+  <li><a href="//github.com/cdeck3r/SmartMeter" class="btn btn-default btn-lg" title="GitHub">
+  <i class="fa fa-github"></i>
+  </a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/cdeck3r" title="LinkedIn" class="btn btn-default btn-lg">
+  <i class="fa fa-linkedin"></i>
+  </a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/channel/UCZ5wNVV_E6AA3L3C-mvqwSA" title="YouTube" class="btn btn-default btn-lg">
+  <i class="fa fa-youtube"></i>
+  </a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/cdeck3r" title="Instagram" class="btn btn-default btn-lg">
+  <i class="fa fa-instagram"></i>
+  </a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/cdeck3r" title="Twitter" class="btn btn-default btn-lg">
+  <i class="fa fa-twitter"></i>
+  </a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="mailto:info@cdeck3r.com" title="Email" class="btn btn-default btn-lg">
+  <i class="fa fa-envelope"></i>
+  </a></li>
+
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</section>
+
+<section id="main">
+
+
+
+	 
+    <div class="content-section-a">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">About</h2>
+                    <p>SmartMeter is hardware/software system for <sup>24</sup>&frasl;<sub>7</sub> recording of the overall electricity consumption in a family home.</p>
+
+<p>It consists of a COTS camera-based embedded computer system which takes pictures of a regular electricity meter. Server software performs an OCR on these pictures and creates a time series report about the overall electricity consumption eventually revealing interesting consumption patterns.</p>
+
+<p>We may gain insights from this report in order to optimze our energy footprint.</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	
+    <div class="content-section-b">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">Project Definition</h2>
+                    
+
+<p>This is a tiny research project. Apart from the overall goal we want to achieve some learning outcomes.</p>
+
+<h3 id="goal">Goal</h3>
+
+<p>Our goal is to improve our energy footprint. Therefore, SmartMeter aims for a fine-grained tracking of the electricity consumption in a family home.</p>
+
+<h3 id="objectives">Objectives</h3>
+
+<p>The project is less on the hardware side, rather it focusses on software for</p>
+
+<ul>
+<li>reliably taking pictures</li>
+<li>data management across various systems at home as well as on the Internet</li>
+<li>AI based optical character recognition</li>
+<li>unattended operation</li>
+<li>fine-grained consumption statistics</li>
+</ul>
+
+<h3 id="expected-results">Expected Results</h3>
+
+<ul>
+<li><sup>24</sup>&frasl;<sub>7</sub> solution delivering electricity consumption data</li>
+<li>Set of real world pictures used for future AI projects</li>
+</ul>
+
+<h3 id="learning-outcomes">Learning Outcomes</h3>
+
+<ul>
+<li>Methods and tools for AI based image processing</li>
+<li>Assess the maturity and ease of use of available tools</li>
+</ul>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	 
+    <div class="content-section-a">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">System Design</h2>
+                    <style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+<p>This use case diagram depicts SmartMeter’s main services.</p>
+
+<p><img src="uml/uc_systemdesign.png" alt="system main services" /></p>
+
+<p>The brief design sketch below shows SmartMeter’s hardware and software components. The local embedded camera system uploads the pictures on Dropbox. The server is a remote host on the Internet downloads them from there and performs the OCR processing.</p>
+
+<p><img src="uml/cp_systemdesign.png" alt="system main components"  width="75%" /></p>
+
+<p>The current design distributes some main services as well as the data across several systems on the Internet. This has implications on data and privacy protection. Although all connections are encrypted, potentially sensitive data is stored outside the physical boundaries of the house, therewith, making data and privacy vulnerable. Special attention needs to be paid on access restriction as well as on data management, e.g. data retention.</p>
+
+<p>An alternative is to perform all processing on the embedded camera system. This will keep all data local. We leave this for future work.</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	
+    <div class="content-section-b">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">Hardware Setup</h2>
+                    <p>We use <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi 3, Model B+</a> as the platform for the COTS embedded camera system. It connects to a <a href="https://www.geeetech.com/wiki/index.php/Raspberry_Pi_Camera_Module">Raspberry Pi camera module</a>.</p>
+
+<p>mirror, installation image &hellip;</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	 
+    <div class="content-section-a">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">Insights</h2>
+                    <p>The energy consumption report depicts our consumption profile. It reveals patterns which correspond to the behavior of the house&rsquo;s residents. This section exploit statistical regularities to derives some measures optimizing our energy footprint. Concretely, we want to reduce the idle consumption, i.e. the energy usage when devices are not in use.</p>
+
+<p>&hellip;</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	
+    <div class="content-section-b">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
+                    <h2 class="section-heading">Conclusion</h2>
+                    <p>SmartMeter records the overall electricity consumption in a family home. It augments a regular electricity meter with an COTS embedded camera system. A server software creates a consumption report providing insights in energy usage patterns.</p>
+
+<p>The list below displays the achieved objectives:</p>
+
+<ul class="task-list">
+<li><label><input type="checkbox" disabled class="task-list-item"> reliably taking pictures</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> data management across various systems at home as well as on the Internet</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> AI based optical character recognition</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> unattended operation</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> fine-grained consumption statistics</label></li>
+</ul>
+
+<p>In the current design, data is stored and processed on an Internet server outside the physical boundaries of the house. In a future SmartMeter implementation, all processing and data handling will be performed on the embedded camera system. This will improve the situation on privacy and data protection.</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+
+</section>
+
+
+<section id = "social-share-section">
+
+	<div class="container">
+		<div class="row">
+			<ul class="list-inline" style="margin-bottom: 10px; margin-top: 10px;">
+				
+
+
+
+
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f&amp;text=SmartMeter&amp;via=cdeck3r" target="_blank" class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+    <i class="fa fa-twitter"></i>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f" target="_blank" class="btn btn-social-icon btn-google" title="Share on Google+">
+    <i class="fa fa-google-plus"></i>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f" target="_blank" class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+    <i class="fa fa-facebook"></i>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f&amp;title=SmartMeter" target="_blank" class="btn btn-social-icon btn-reddit" title="Share on Reddit">
+    <i class="fa fa-reddit-alien"></i>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f&amp;title=SmartMeter" target="_blank" class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <i class="fa fa-linkedin"></i>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f&amp;title=SmartMeter" target="_blank" class="btn btn-social-icon btn-google " title="Share on StumbleUpon">
+    <i class="fa fa-stumbleupon"></i>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f&amp;description=SmartMeter" target="_blank" class="btn btn-social-icon btn-pinterest" title="Share on Pinterest">
+    <i class="fa fa-pinterest-p"></i>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this project &quot;SmartMeter&quot;&amp;body=https%3a%2f%2fcdeck3r.com%2fSmartMeter%2f" target="_blank" class="btn btn-social-icon btn-github " title="Share on Email">
+    <i class="fa fa-envelope"></i>
+  </a>
+</li>
+
+
+			</ul>
+		</div>
+	</div>
+
+</section>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="padding-left: 0px; width:100%">
+				<ul class="list-inline">
+					<li>
+						<a class="page-scroll" href="#intro">Up</a>
+					</li>
+					<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="https://cdeck3r.com/SmartMeter/imprint-gdpr/imprint" >Imprint</a>
+						</li>
+					<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="https://cdeck3r.com/SmartMeter/imprint-gdpr/gdpr" >GDPR</a>
+						</li>
+				 </ul>
+				 <p class="copyright text-muted small" style="text-align:left;">
+                    Copyright &copy; SmartMeter All Rights Reserved 
+                        </br>Built with <a href="http://gohugo.io">Hugo</a> and the <a href="https://github.com/cdeck3r/OneDly-Theme">OneDly project</a> theme.
+                 </p>
+			</div>
+            
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-1.11.0.js"></script>
+
+
+<script src="js/jquery.easing.min.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+

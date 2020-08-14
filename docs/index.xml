@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SmartMeter</title>
+    <link>https://cdeck3r.com/SmartMeter/</link>
+    <description>Recent content on SmartMeter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cdeck3r.com/SmartMeter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conclusion</title>
+      <link>https://cdeck3r.com/SmartMeter/post/99_conclusion/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/99_conclusion/</guid>
+      <description>SmartMeter records the overall electricity consumption in a family home. It augments a regular electricity meter with an COTS embedded camera system. A server software creates a consumption report providing insights in energy usage patterns.
+The list below displays the achieved objectives:
+reliably taking pictures data management across various systems at home as well as on the Internet AI based optical character recognition unattended operation fine-grained consumption statistics  In the current design, data is stored and processed on an Internet server outside the physical boundaries of the house.</description>
+    </item>
+    
+    <item>
+      <title>Hardware Setup</title>
+      <link>https://cdeck3r.com/SmartMeter/post/04_hardware/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/04_hardware/</guid>
+      <description>We use Raspberry Pi 3, Model B+ as the platform for the COTS embedded camera system. It connects to a Raspberry Pi camera module.
+mirror, installation image &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Insights</title>
+      <link>https://cdeck3r.com/SmartMeter/post/80_insights/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/80_insights/</guid>
+      <description>The energy consumption report depicts our consumption profile. It reveals patterns which correspond to the behavior of the house&amp;rsquo;s residents. This section exploit statistical regularities to derives some measures optimizing our energy footprint. Concretely, we want to reduce the idle consumption, i.e. the energy usage when devices are not in use.
+&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Project Definition</title>
+      <link>https://cdeck3r.com/SmartMeter/post/02_project/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/02_project/</guid>
+      <description> This is a tiny research project. Apart from the overall goal we want to achieve some learning outcomes.
+Goal Our goal is to improve our energy footprint. Therefore, SmartMeter aims for a fine-grained tracking of the electricity consumption in a family home.
+Objectives The project is less on the hardware side, rather it focusses on software for
+ reliably taking pictures data management across various systems at home as well as on the Internet AI based optical character recognition unattended operation fine-grained consumption statistics  Expected Results  24&amp;frasl;7 solution delivering electricity consumption data Set of real world pictures used for future AI projects  Learning Outcomes  Methods and tools for AI based image processing Assess the maturity and ease of use of available tools  </description>
+    </item>
+    
+    <item>
+      <title>System Design</title>
+      <link>https://cdeck3r.com/SmartMeter/post/03_systemdesign/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/03_systemdesign/</guid>
+      <description>img { max-width: 100%; height: auto; }  This use case diagram depicts SmartMeter’s main services.
+The brief design sketch below shows SmartMeter’s hardware and software components. The local embedded camera system uploads the pictures on Dropbox. The server is a remote host on the Internet downloads them from there and performs the OCR processing.
+The current design distributes some main services as well as the data across several systems on the Internet.</description>
+    </item>
+    
+    <item>
+      <title>General Data Protection Regulation (GDPR)</title>
+      <link>https://cdeck3r.com/SmartMeter/imprint-gdpr/gdpr/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/imprint-gdpr/gdpr/</guid>
+      <description>Datenschutzerklärung Einleitung Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als &amp;ldquo;Daten“ bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z.B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als &amp;ldquo;Onlineangebot“).</description>
+    </item>
+    
+    <item>
+      <title>Imprint</title>
+      <link>https://cdeck3r.com/SmartMeter/imprint-gdpr/imprint/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/imprint-gdpr/imprint/</guid>
+      <description>Information according to § 5 TMG
+Christian Decker
+c/o Herman Hollerith Zentrum
+Danziger Str. 6
+71034 Böblingen
+Contact: Phone: +49 7121 271 4105
+E-Mail: christian.decker@reutlingen-university.de
+Responsible for content according to § 55 Abs. 2 RStV: Christian Decker
+c/o Herman Hollerith Zentrum
+Danziger Str. 6
+71034 Böblingen
+Disclaimer: Content Liability The contents of our pages were created with great care. However, we can not assume any liability for the accuracy, completeness and timeliness of the content.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://cdeck3r.com/SmartMeter/post/01_about/</link>
+      <pubDate>Wed, 07 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/01_about/</guid>
+      <description>SmartMeter is hardware/software system for 24&amp;frasl;7 recording of the overall electricity consumption in a family home.
+It consists of a COTS camera-based embedded computer system which takes pictures of a regular electricity meter. Server software performs an OCR on these pictures and creates a time series report about the overall electricity consumption eventually revealing interesting consumption patterns.
+We may gain insights from this report in order to optimze our energy footprint.</description>
+    </item>
+    
+  </channel>
+</rss>
