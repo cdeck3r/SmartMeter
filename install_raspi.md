@@ -9,7 +9,22 @@ Tested with
 
 Install the project's SmartMeter software on the Raspberry Pi.
 
-...
+* Copy the content of `raspi` directory onto the Raspberry Pi
+
+Setup [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
+
+You will need a dropbox account.
+
+1. Go to https://www.dropbox.com/developers/apps and login
+1. Click on *Create App*, 
+1. In section 1, select first radio button *Scoped access* 
+1. In section 2, select *App folder* 
+1. In section 3, name your app
+1. Finally, hit *Create App*
+1. on the next screen tick all permissions for *Files and folders*, but not `files.permanent_delete`
+1. set the `Access token expiration` to `No expiration` 
+1. click on the *Generate* button
+1. copy the access token in the file `~/.dropbox_uploader` on the Raspberry Pi
 
 
 ## Bare Raspberry Pi Setup 
