@@ -11,7 +11,9 @@ Install the project's SmartMeter software on the Raspberry Pi.
 
 * Copy the content of `raspi` directory onto the Raspberry Pi
 
-Setup [Dropbox Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
+##### **Setup Dropbox Uploader**
+
+GitHub repo of Dropbox Uploader: https://github.com/andreafabrizi/Dropbox-Uploader
 
 You will need a dropbox account.
 
@@ -26,6 +28,17 @@ You will need a dropbox account.
 1. click on the *Generate* button
 1. copy the access token in the file `~/.dropbox_uploader` on the Raspberry Pi
 
+
+##### **Run SmartMeter as a cronjob**
+
+Install the provided cronjob example [smartmeter.crontab](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smartmeter.crontab)
+
+```bash
+crontab smartmeter.crontab
+crontab -l
+```
+
+The last line verifies that the cronjob got installed. The example schedules the script every 15 minutes within a full hour starting at minute 5. So, it runs 0:05, 0:20, 0:35, ...
 
 ## Bare Raspberry Pi Setup 
 
