@@ -24,41 +24,29 @@ DBU_DIR=images
 
 
 #####################################################
-# Helper functions
+# Include Helper functions
 #####################################################
-#
-# logging on stdout
-# Param #1: log level, e.g. INFO, WARN, ERROR
-# Param #2: log message
-log_echo () {
-    LOG_LEVEL=$1
-    LOG_MSG=$2
-    TS=$(date '+%Y-%m-%d %H:%M:%S,%s')
-    echo "$TS - $SCRIPT_NAME - $LOG_LEVEL - $LOG_MSG"
-}
+
+source "${SCRIPT_DIR}/funcs.sh"
 
 #####################################################
 # Main program
 #####################################################
 
 # First things first
+assert_on_raspi
 
-# check we are on Raspi
-MACHINE=$(uname -m)
-if [[ "$MACHINE" != arm* ]]; then
-    log_echo "ERROR" "We are not on an arm plattform: ${MACHINE}"
-    exit 1
-fi 
-
+# Dropbox Uploader exists?
 if [ ! -f "${DBU}" ]; then
     log_echo "ERROR" "Abort. Dropbox Uploader not found: ${DBU}"
     exit 1
 fi
+# Dropbox Uploader executable?
 if [ ! -x "${DBU}" ]; then
     log_echo "WARN" "Dropbox Upload not executable. Will make executable: ${DBU}"
     chmod u+x "${DBU}"
 fi
-
+# directory exists?
 if [ ! -d "${IMG_DIR}" ]; then
     log_echo "ERROR" "Abort. Image dir does not exist: ${IMG_DIR}"
     exit 1

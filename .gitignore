@@ -3,6 +3,7 @@
 
 .env
 .gitconfig
+.dropbox_uploader
 tools
 raspios
 install
