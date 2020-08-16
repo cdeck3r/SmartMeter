@@ -40,6 +40,13 @@ crontab -l
 
 The last line verifies that the cronjob got installed. The example schedules the script every 15 minutes within a full hour starting at minute 5. So, it runs 0:05, 0:20, 0:35, ...
 
+Finally, run the command below to remove the user's crontab. Note: This will remove all entries.
+
+```bash
+crontab -r
+```
+
+
 ## Bare Raspberry Pi Setup 
 
 These instructions describe the initial setup of an unboxed, brand-new Raspberry Pi. 
