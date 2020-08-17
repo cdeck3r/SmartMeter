@@ -122,9 +122,44 @@ body {
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
             <h2 class="section-heading">Hardware Setup</h2>
-            <p>We use <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi 3, Model B+</a> as the platform for the COTS embedded camera system. It connects to a <a href="https://www.geeetech.com/wiki/index.php/Raspberry_Pi_Camera_Module">Raspberry Pi camera module</a>.</p>
+            <style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
 
-<p>mirror, installation image &hellip;</p>
+<p>We use <a href="https://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi 3, Model B+</a> as the platform for the COTS embedded camera system. It connects to a <a href="https://www.geeetech.com/wiki/index.php/Raspberry_Pi_Camera_Module">Raspberry Pi camera module</a>.</p>
+
+<p>The regular electricity meter is inside a switch cabinet. The inner side of the cabinet&rsquo;s door holds the Raspberry Pi and the camera using magnets. The following picture shows the installation.</p>
+
+<p><img src="img/smeter_install.jpg" alt="SmartMeter installation" width="50%"/></p>
+
+<p>There are only 3 centimeters between the meter&rsquo;s display and the cabinet door. The camera looks at the display via the mirror. A Raspberry powered USB light supplies sufficient brightness for the camera to take pictures. The next picture shows the components.</p>
+
+<p><img src="img/smeter_front.jpg" alt="SmartMeter components" width="50%"/></p>
+
+<p>The picture shows how the installation is oriented towards the meter when the door is closed.</p>
+
+<p><img src="img/smeter_inside.jpg" alt="SmartMeter inside" width="50%"/></p>
+
+<p>When operating the camera captures a mirrored image of the electricity meter&rsquo;s display. Rotating and mirroring it will show the number correctly.</p>
+
+<table>
+<thead>
+<tr>
+<th>Original image</th>
+<th>Image rotated and mirrored</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><img src="img/metercam.png" alt="image captured by meter camera" width="75%" /></td>
+<td><img src="img/metercam_numbers.png" alt="meter camera" /></td>
+</tr>
+</tbody>
+</table>
 
         </div>
     </div>

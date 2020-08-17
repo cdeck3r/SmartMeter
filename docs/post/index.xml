@@ -28,8 +28,9 @@ reliably taking pictures data management across various systems at home as well 
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://cdeck3r.com/SmartMeter/post/04_hardware/</guid>
-      <description>We use Raspberry Pi 3, Model B+ as the platform for the COTS embedded camera system. It connects to a Raspberry Pi camera module.
-mirror, installation image &amp;hellip;</description>
+      <description>img { max-width: 100%; height: auto; }  We use Raspberry Pi 3, Model B+ as the platform for the COTS embedded camera system. It connects to a Raspberry Pi camera module.
+The regular electricity meter is inside a switch cabinet. The inner side of the cabinet&amp;rsquo;s door holds the Raspberry Pi and the camera using magnets. The following picture shows the installation.
+There are only 3 centimeters between the meter&amp;rsquo;s display and the cabinet door.</description>
     </item>
     
     <item>
