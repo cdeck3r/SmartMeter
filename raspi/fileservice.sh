@@ -6,6 +6,11 @@
 # Author: cdeck3r
 #
 
+# Params: none
+
+# Exit codes
+# 1: pre-cond not fulfilled
+# 2: network or host problem
 
 # this directory is the script directory
 SCRIPT_DIR="$(
@@ -39,6 +44,9 @@ source "${SCRIPT_DIR}/funcs.sh"
 
 # First things first
 assert_on_raspi
+
+# check connection to dropbox.com
+curl -L dropbox.com >/dev/null 2>&1 && { log_echo "INFO" "Website dropbox.com is reachable."; } || { log_echo "ERROR" "Error retrieving dropbox.com.  Abort."; exit 2; }
 
 # Dropbox Uploader exists?
 if [ ! -f "${DBU}" ]; then
