@@ -4,6 +4,8 @@ Our goal is to improve our energy footprint. Therefore, we aim for a fine-graine
 
 The project has its own website under https://cdeck3r.com/SmartMeter.
 
+The [Github's project board](https://github.com/cdeck3r/SmartMeter/projects/1) tracks the development tasks.
+
 ## Project Description
 
 A COTS camera-based embedded computer system takes pictures of a regular electricity meter. A server software performs an OCR and converts the pictures into numbers. Finally, a statistics report reveals some insights on consumption patterns and behaviors which enables us to improve our energy footprint.
