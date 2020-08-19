@@ -35,7 +35,7 @@ The above schedule makes it difficult to do maintenance activities. A developer 
 
 The developer has to set the external time switch to permanent on in order to avoid powers-off .
 
-The check for the maintenance mode is implemented in the `maintenance.sh` script. The following figure depicts the maintenance mode setting in `smeter.sh` as an activity diagram.
+The [`maintenance.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/maintenance.sh) script implements the check for the maintenance mode. The following figure depicts the maintenance mode setting in `smeter.sh` as an activity diagram.
 
 <img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software" width="50%"/>
 

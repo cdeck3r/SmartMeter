@@ -12,8 +12,8 @@
 # Params: none
 
 # Exit codes
-# 0: if no main
-# >0: maintenance file found on USB thumb drive
+# 0: if no maintenance file found -> maintenance mode is: off
+# >0: maintenance file found on USB thumb drive -> maintenance mode is: on
 
 # this directory is the script directory
 SCRIPT_DIR="$(
@@ -25,8 +25,8 @@ cd "$SCRIPT_DIR" || exit
 SCRIPT_NAME=$0
 
 # variables
-# none
-
+USB_DRIVES=/media/pi
+MAINTENANCE_FILE=maintenance
 
 #####################################################
 # Include Helper functions
@@ -41,7 +41,13 @@ source "${SCRIPT_DIR}/funcs.sh"
 # First things first
 assert_on_raspi
 
-log_echo "WARN" "Maintenance mode not yet implemented yet. Will default to: 0"
+# search for MAINTENANCE_FILE; if found exit with non-zero code
+FOUND_MAINTENANCE=$(find ${USB_DRIVES} -type f -name ${MAINTENANCE_FILE} | wc -l)
+if [[ ${FOUND_MAINTENANCE} -ne 0 ]]; then
+    log_echo "INFO" "Maintenance mode is: on"
+    exit 1
+fi
 
 # default: we are not in maintenance mode
+log_echo "INFO" "Maintenance mode is: off"
 exit 0
