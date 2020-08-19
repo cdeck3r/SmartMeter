@@ -6,10 +6,20 @@
     <description>Recent content in Sections on SmartMeter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cdeck3r.com/SmartMeter/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SmartMeter Camera Software</title>
+      <link>https://cdeck3r.com/SmartMeter/post/10_raspi_software/</link>
+      <pubDate>Wed, 19 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/10_raspi_software/</guid>
+      <description>img { max-width: 100%; height: auto; }  The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script smeter.sh controls all functions.
+Scheduling An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script smeter.sh, which takes the pictures (takepicture.sh) and uploads them to Dropbox (fileservice.sh). At the end, the script shuts down the Raspberry Pi.</description>
+    </item>
     
     <item>
       <title>Conclusion</title>

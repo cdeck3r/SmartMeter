@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="
+		Software for the SmartMeter camera system
+		"> 
+    
+	<meta name="author" content=" cdeck3r ">  
+    <base href="https://cdeck3r.com/SmartMeter/">
+    <title>SmartMeter Camera Software</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+
+    
+    
+    
+
+    <style>
+    .navbar {
+    border-color: #e7e7e7;
+}
+
+.content-section-a,
+footer,
+.navbar {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.navbar a:link,
+.navbar-default .navbar-nav>li>a {
+  color: #777;
+}
+
+.navbar a:hover,
+.navbar-default .navbar-nav>li>a:hover {
+  color: rgb(51, 51, 51);
+}
+
+.content-section-b {
+  background-color: white;
+  color: #333;
+}
+
+body {
+  color: rgb(51, 51, 51);
+}
+
+.header-container h1,
+.header-container h2,
+.header-container h3,
+.header-container h4 {
+  color: rgb(51, 51, 51);
+}
+ 
+  </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        
+        <div class="navbar-header page-scroll" style="margin-left: -15px;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-right: 0px;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" style="padding-left: 0px;margin-left: 0px;" href="#intro">
+            SmartMeter</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+				
+				<li>
+				  <a class="page-scroll" href="//github.com/cdeck3r/SmartMeter">
+                    Github
+                  </a>
+                </li>
+				 
+				
+				<li>
+					<a class="page-scroll" href="//cdeck3r.com">
+                    cdeck3r
+					</a>
+                </li>
+				 
+            </ul>
+        </div>
+        
+    </div>
+    
+</nav>
+
+
+<section id="services">
+   <div class="content-section-a">
+
+      <div class="container">
+
+        <div class="row">
+          <div>
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+            <h2 class="section-heading">SmartMeter Camera Software</h2>
+            
+
+<style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+<p>The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script <code>smeter.sh</code> controls all functions.</p>
+
+<h3 id="scheduling">Scheduling</h3>
+
+<p>An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time, the external time switch powers-off. The following figure depicts the schedule.</p>
+
+<p><img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" width="50%"/></p>
+
+<p>The schedule repeats as soon as the external time switch again powers-on the Raspberry Pi.</p>
+
+<h3 id="maintenance-mode">Maintenance Mode</h3>
+
+<p>The above schedule makes it difficult to do maintenance activities. A developer needs to login after the bootup and stop the <code>smeter.sh</code> script before the Raspberry Pi shuts down.</p>
+
+<p><strong>Maintenance mode:</strong></p>
+
+<blockquote>
+<p>The control script checks for a USB thumb drive at its startup. If it finds the file <code>maintenance</code> in the root directory, it disables the shutdown.</p>
+</blockquote>
+
+<p>The developer has to set the external time switch to permanent on in order to avoid powers-off .</p>
+
+<p>The <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/maintenance.sh"><code>maintenance.sh</code></a> script implements the check for the maintenance mode. The following figure depicts the maintenance mode setting in <code>smeter.sh</code> as an activity diagram.</p>
+
+<p><img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software" width="50%"/></p>
+
+<h3 id="log-rotation">Log Rotation</h3>
+
+<p>We use standard linux tool <code>logrotate</code>. The config file defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
+
+<ol>
+<li>Call the linux tool <code>logrotate</code></li>
+<li>Upload the logfiles to dropbox</li>
+</ol>
+
+<p>The central control script <code>smeter.sh</code> calls the <code>logrotate.sh</code> after the picture upload.</p>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="padding-left: 0px; width:100%">
+				<ul class="list-inline">
+					<li>
+						<a class="page-scroll" href="#intro">Up</a>
+					</li>
+					<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="https://cdeck3r.com/SmartMeter/imprint-gdpr/imprint" >Imprint</a>
+						</li>
+					<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="https://cdeck3r.com/SmartMeter/imprint-gdpr/gdpr" >GDPR</a>
+						</li>
+				 </ul>
+				 <p class="copyright text-muted small" style="text-align:left;">
+                    Copyright &copy; SmartMeter All Rights Reserved 
+                        </br>Built with <a href="http://gohugo.io">Hugo</a> and the <a href="https://github.com/cdeck3r/OneDly-Theme">OneDly project</a> theme.
+                 </p>
+			</div>
+            
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-1.11.0.js"></script>
+
+
+<script src="js/jquery.easing.min.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+

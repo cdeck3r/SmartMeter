@@ -425,6 +425,70 @@ img {
             <div class="row">
                 <div>
                     
+                    <h2 class="section-heading">SmartMeter Camera Software</h2>
+                    
+
+<style>
+img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+<p>The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script <code>smeter.sh</code> controls all functions.</p>
+
+<h3 id="scheduling">Scheduling</h3>
+
+<p>An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time, the external time switch powers-off. The following figure depicts the schedule.</p>
+
+<p><img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" width="50%"/></p>
+
+<p>The schedule repeats as soon as the external time switch again powers-on the Raspberry Pi.</p>
+
+<h3 id="maintenance-mode">Maintenance Mode</h3>
+
+<p>The above schedule makes it difficult to do maintenance activities. A developer needs to login after the bootup and stop the <code>smeter.sh</code> script before the Raspberry Pi shuts down.</p>
+
+<p><strong>Maintenance mode:</strong></p>
+
+<blockquote>
+<p>The control script checks for a USB thumb drive at its startup. If it finds the file <code>maintenance</code> in the root directory, it disables the shutdown.</p>
+</blockquote>
+
+<p>The developer has to set the external time switch to permanent on in order to avoid powers-off .</p>
+
+<p>The <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/maintenance.sh"><code>maintenance.sh</code></a> script implements the check for the maintenance mode. The following figure depicts the maintenance mode setting in <code>smeter.sh</code> as an activity diagram.</p>
+
+<p><img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software" width="50%"/></p>
+
+<h3 id="log-rotation">Log Rotation</h3>
+
+<p>We use standard linux tool <code>logrotate</code>. The config file defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
+
+<ol>
+<li>Call the linux tool <code>logrotate</code></li>
+<li>Upload the logfiles to dropbox</li>
+</ol>
+
+<p>The central control script <code>smeter.sh</code> calls the <code>logrotate.sh</code> after the picture upload.</p>
+
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+	
+    <div class="content-section-b">
+    
+   
+        <div class="container">
+
+            <div class="row">
+                <div>
+                    
                     <h2 class="section-heading">Insights</h2>
                     <p>The energy consumption report depicts our consumption profile. It reveals patterns which correspond to the behavior of the house&rsquo;s residents. This section exploit statistical regularities to derives some measures optimizing our energy footprint. Concretely, we want to reduce the idle consumption, i.e. the energy usage when devices are not in use.</p>
 
@@ -438,8 +502,8 @@ img {
 
     </div>
 
-	
-    <div class="content-section-b">
+	 
+    <div class="content-section-a">
     
    
         <div class="container">
