@@ -1,0 +1,21 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+"Time switch" -> "Time switch": <<power-on>>
+activate "Time switch"
+"Time switch" -> Raspi: bootup
+activate Raspi
+Raspi -> Raspi: cron
+Raspi -> Raspi: sleep
+Raspi -> smeter.sh: start
+activate smeter.sh
+smeter.sh -> smeter.sh: takepicture.sh
+smeter.sh -> smeter.sh: fileservice.sh
+smeter.sh --> Raspi: shutdown
+deactivate smeter.sh
+destroy Raspi
+
+"Time switch" -> "Time switch": <<power-off>>
+deactivate "Time switch"
+@enduml

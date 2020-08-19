@@ -1,0 +1,23 @@
+@startuml
+skinparam monochrome true
+skinparam componentStyle uml2
+
+start
+:Check for `maintenance` 
+file on USB drive;
+if (file found?) then (yes)
+    :MAINTENANCE mode on;
+else (no)
+    :MAINTENANCE mode off;
+endif
+
+:take picture;
+:upload picture;
+
+if (MAINTENANCE mode is?) then (off)
+    :shutdown;
+else (on)
+stop
+endif
+stop
+@enduml
