@@ -20,7 +20,7 @@ The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads 
 
 An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script [`smeter.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh), which takes the pictures (`takepicture.sh`) and uploads them to Dropbox (`fileservice.sh`). At the end, the script shuts down the Raspberry Pi. At a later time, the external time switch powers-off. The following figure depicts the schedule.
 
-<img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" width="50%"/>
+<img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" />
 
 The schedule repeats as soon as the external time switch again powers-on the Raspberry Pi.
 
@@ -37,7 +37,7 @@ The developer has to set the external time switch to permanent on in order to av
 
 The [`maintenance.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/maintenance.sh) script implements the check for the maintenance mode. The following figure depicts the maintenance mode setting in `smeter.sh` as an activity diagram.
 
-<img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software" width="50%"/>
+<img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software"/>
 
 
 ### Log Rotation

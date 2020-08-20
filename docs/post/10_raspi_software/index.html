@@ -137,7 +137,7 @@ img {
 
 <p>An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time, the external time switch powers-off. The following figure depicts the schedule.</p>
 
-<p><img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" width="50%"/></p>
+<p><img src="uml/sd_schedule.png" alt="SmartMeter software on Raspi" /></p>
 
 <p>The schedule repeats as soon as the external time switch again powers-on the Raspberry Pi.</p>
 
@@ -155,7 +155,7 @@ img {
 
 <p>The <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/maintenance.sh"><code>maintenance.sh</code></a> script implements the check for the maintenance mode. The following figure depicts the maintenance mode setting in <code>smeter.sh</code> as an activity diagram.</p>
 
-<p><img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software" width="50%"/></p>
+<p><img src="uml/ac_maintenance.png" alt="Maintenance mode of the SmartMeter camera software"/></p>
 
 <h3 id="log-rotation">Log Rotation</h3>
 
