@@ -16,7 +16,7 @@ Our goal is to improve our energy footprint. Therefore, SmartMeter aims for a fi
 
 The project is less on the hardware side, rather it focusses on software for 
 
-* reliably taking pictures
+* reliably taking pictures in 15 minutes intervals
 * data management across various systems at home as well as on the Internet
 * AI based optical character recognition
 * unattended operation

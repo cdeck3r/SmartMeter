@@ -36,6 +36,16 @@ IMG_DIR="${SCRIPT_DIR}"/images
 #####################################################
 source "${SCRIPT_DIR}/funcs.sh"
 
+# source: https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=162539#p1051587
+# Note: This will also switch off the ethernet adapter
+light_off () {
+    echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
+}
+
+light_on () {
+    echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
+}
+
 #####################################################
 # Main program
 #####################################################
@@ -59,25 +69,38 @@ else
     exit 1
 fi
 
-# take picture
-if [ -x "${SCRIPT_DIR}"/takepicture.sh ]; then 
-    #"${SCRIPT_DIR}"/takepicture.sh
-else
-    log_echo "ERROR" "Could not start script: ${SCRIPT_DIR}/takepicture.sh"
-    exit 1
-fi
-
-# upload to dropbox
-# "${SCRIPT_DIR}"/fileservice.sh
-# retry, if network problem
-if [[ $? -eq 2 ]]; then
-    log_echo "WARN" "Network problem. Retry in 60 seconds."
-    sleep 60
-    "${SCRIPT_DIR}"/fileservice.sh
-    if [[ $? -ne 0 ]]; then
-        log_echo "ERROR" "Re-occuring network problem. No further retry."
+# iterate three times at 0, 15, 30 min
+for (( c=1; c<=3; c++ ))
+do
+    # take picture
+    light_on
+    if [ -x "${SCRIPT_DIR}"/takepicture.sh ]; then 
+        "${SCRIPT_DIR}"/takepicture.sh
+    else
+        log_echo "ERROR" "Could not start script: ${SCRIPT_DIR}/takepicture.sh"
+        exit 1
     fi
-fi
+    light_off
+
+    # upload to dropbox
+    "${SCRIPT_DIR}"/fileservice.sh
+    # retry, if network problem
+    if [[ $? -eq 2 ]]; then
+        log_echo "WARN" "Network problem. Retry in 60 seconds."
+        sleep 60
+        "${SCRIPT_DIR}"/fileservice.sh
+        if [[ $? -ne 0 ]]; then
+            log_echo "ERROR" "Re-occuring network problem. No further retry."
+        fi
+    fi
+    
+    # sleep until next iteration
+    # 13 min to account for delay on upload / upload retry 
+    if [ $c -le 2 ]; then
+        log_echo "INFO" "Wait for next iteration."
+        sleep 780
+    fi
+done
 
 # handle logs using logrotate
 if [ -x "${SCRIPT_DIR}"/logrotate.sh ]; then 
@@ -88,7 +111,7 @@ else
 fi
 
 # shutdown
-if [[ ${MAINTENANCE_MODE} -ne 0 ]]; then
+if [[ ${MAINTENANCE_MODE} -eq 0 ]]; then
     log_echo "INFO" "SmartMeter camera system shuts down."
     sudo shutdown -h now
 fi

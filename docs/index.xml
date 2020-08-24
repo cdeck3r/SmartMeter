@@ -18,7 +18,7 @@
       
       <guid>https://cdeck3r.com/SmartMeter/post/10_raspi_software/</guid>
       <description>img { max-width: 100%; height: auto; }  The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script smeter.sh controls all functions.
-Scheduling An external time switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script smeter.sh, which takes the pictures (takepicture.sh) and uploads them to Dropbox (fileservice.sh). At the end, the script shuts down the Raspberry Pi.</description>
+Scheduling An external timer switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script smeter.sh, which takes the pictures (takepicture.sh) and uploads them to Dropbox (fileservice.sh). At the end, the script shuts down the Raspberry Pi.</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@ There are only 3 centimeters between the meter&amp;rsquo;s display and the cabin
       <description> This is a tiny research project. Apart from the overall goal we want to achieve some learning outcomes.
 Goal Our goal is to improve our energy footprint. Therefore, SmartMeter aims for a fine-grained tracking of the electricity consumption in a family home.
 Objectives The project is less on the hardware side, rather it focusses on software for
- reliably taking pictures data management across various systems at home as well as on the Internet AI based optical character recognition unattended operation fine-grained consumption statistics  Expected Results  24&amp;frasl;7 solution delivering electricity consumption data Set of real world pictures used for future AI projects  Learning Outcomes  Methods and tools for AI based image processing Assess the maturity and ease of use of available tools  </description>
+ reliably taking pictures in 15 minutes intervals data management across various systems at home as well as on the Internet AI based optical character recognition unattended operation fine-grained consumption statistics  Expected Results  24&amp;frasl;7 solution delivering electricity consumption data Set of real world pictures used for future AI projects  Learning Outcomes  Methods and tools for AI based image processing Assess the maturity and ease of use of available tools  </description>
     </item>
     
     <item>

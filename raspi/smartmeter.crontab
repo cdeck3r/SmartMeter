@@ -21,4 +21,4 @@
 #
 # m h  dom mon dow   command
 #
-5,20,35,50 * * * * "$HOME"/smartmeter/takepicture.sh && "$HOME"/smartmeter/fileservice.sh >> "$HOME"/smartmeter/log/smartmeter.log 2>&1 
+@reboot sleep 120 && "$HOME"/smartmeter/smeter.sh >> "$HOME"/smartmeter/log/smartmeter.log 2>&1 

@@ -2,20 +2,22 @@
 skinparam monochrome true
 skinparam componentStyle uml2
 
-"Time switch" -> "Time switch": <<power-on>>
-activate "Time switch"
-"Time switch" -> Raspi: bootup
+"Timer switch" -> "Timer switch": <<power-on>>
+activate "Timer switch"
+"Timer switch" -> Raspi: bootup
 activate Raspi
 Raspi -> Raspi: cron
 Raspi -> Raspi: sleep
 Raspi -> smeter.sh: start
-activate smeter.sh
-smeter.sh -> smeter.sh: takepicture.sh
-smeter.sh -> smeter.sh: fileservice.sh
+group loop at 0, 15, 30 min
+  activate smeter.sh
+  smeter.sh -> smeter.sh: takepicture.sh
+  smeter.sh -> smeter.sh: fileservice.sh
+end
 smeter.sh --> Raspi: shutdown
 deactivate smeter.sh
 destroy Raspi
 
-"Time switch" -> "Time switch": <<power-off>>
-deactivate "Time switch"
+"Timer switch" -> "Timer switch": <<power-off>>
+deactivate "Timer switch"
 @enduml
