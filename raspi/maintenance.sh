@@ -25,7 +25,7 @@ cd "$SCRIPT_DIR" || exit
 SCRIPT_NAME=$0
 
 # variables
-USB_DRIVES=/media/pi
+USB_DRIVES=/media
 MAINTENANCE_FILE=maintenance
 
 #####################################################
