@@ -76,10 +76,10 @@ done
 ####################################
 
 # list remote files
-"${DBU}" -f "${DBU_CFG}" list "${DBU_DIR}" | cut -d' ' -f4 | grep -P '^\d{8}_\d{6}\.png' > "${REMOTE_FILELST}"
+"${DBU}" -f "${DBU_CFG}" list "${DBU_DIR}" | sed 's/\s\s*/ /g' | cut -d' ' -f4 | grep -P '^\d{8}_\d{6}\.png' | sort > "${REMOTE_FILELST}"
 
 # list local files
-find "${IMG_DIR}" -type f -printf "%f\n" > "${LOCAL_FILELST}"
+find "${IMG_DIR}" -type f -printf "%f\n" | sort > "${LOCAL_FILELST}"
 
 # list the files found in both
 comm -12 "${REMOTE_FILELST}" "${LOCAL_FILELST}" > "${BOTH_FILELST}"
@@ -88,8 +88,8 @@ comm -12 "${REMOTE_FILELST}" "${LOCAL_FILELST}" > "${BOTH_FILELST}"
 # not very elegant, but it works
 for f in $(cat "${BOTH_FILELST}") ; do 
   rmfile="${IMG_DIR}"/"$f"
-  log_echo "INFO" "NOT IMPLEMENTED YET - Delete file: ${rmfile}"
-  #rm -rf "${rmfile}"
+  log_echo "INFO" "Delete file: ${rmfile}"
+  rm -rf "${rmfile}"
 done
 
 # cleanup
