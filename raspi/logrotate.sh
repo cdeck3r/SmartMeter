@@ -22,7 +22,9 @@ cd "$SCRIPT_DIR" || exit
 SCRIPT_NAME=$0
 
 # variables
-# none
+CONF_FILE="${HOME}"/smartmeter/logrotate.conf
+STATE_FILE="${HOME}"/smartmeter/log/logrotate.state
+LOG_FILE="${HOME}"/smartmeter/log/logrotate.log
 
 #####################################################
 # Include Helper functions
@@ -37,5 +39,6 @@ source "${SCRIPT_DIR}/funcs.sh"
 # First things first
 assert_on_raspi
 
-log_echo "WARN" "lograte not implemented yet."
+log_echo "INFO" "lograte starts: ${HOME}/smartmeter/log"
+logrotate -s "${STATE_FILE}" -l "${LOG_FILE}" "${CONF_FILE}"
 exit 0
