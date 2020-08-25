@@ -133,6 +133,8 @@ img {
 
 <p>The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script <code>smeter.sh</code> controls all functions.</p>
 
+<p>For installation instruction see <a href="https://github.com/cdeck3r/SmartMeter/blob/master/install_raspi.md">install_raspi.md</a>.</p>
+
 <h3 id="scheduling">Scheduling</h3>
 
 <p>An external timer switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time, the external timer switch powers-off.</p>
