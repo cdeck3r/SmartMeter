@@ -39,6 +39,6 @@ source "${SCRIPT_DIR}/funcs.sh"
 # First things first
 assert_on_raspi
 
-log_echo "INFO" "lograte starts: ${HOME}/smartmeter/log"
-logrotate -s "${STATE_FILE}" -l "${LOG_FILE}" "${CONF_FILE}"
+log_echo "INFO" "logrotate starts: ${HOME}/smartmeter/log"
+/usr/sbin/logrotate -s "${STATE_FILE}" -l "${LOG_FILE}" "${CONF_FILE}"
 exit 0
