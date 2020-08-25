@@ -9,7 +9,6 @@
 # variables
 REPO_ZIP=https://github.com/cdeck3r/SmartMeter/archive/master.zip
 INSTALL_DIR=${HOME}/smartmeter
-INSTALL_DIR=${HOME}/smartmeter_test
 
 # check for installed program
 # Source: https://stackoverflow.com/a/677212
