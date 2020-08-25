@@ -46,10 +46,10 @@ The [`maintenance.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/m
 
 ### Log Rotation
 
-We use standard linux tool `logrotate`. The config file defines the parameters and resides in the same directory as the other scripts. `logrotate.sh` has the following functions:
+We use standard linux tool `logrotate`. The config file `logrotate.conf` defines the parameters and resides in the same directory as the other scripts. `logrotate.sh` has the following functions:
 
 1. Call the linux tool `logrotate`
 1. Upload the logfiles to dropbox
 
-The central control script `smeter.sh` calls the `logrotate.sh` after the picture upload.
+The central control script `smeter.sh` calls the `logrotate.sh` before the duty cycle ends and the system shuts down.
 

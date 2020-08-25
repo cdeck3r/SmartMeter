@@ -467,14 +467,14 @@ img {
 
 <h3 id="log-rotation">Log Rotation</h3>
 
-<p>We use standard linux tool <code>logrotate</code>. The config file defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
+<p>We use standard linux tool <code>logrotate</code>. The config file <code>logrotate.conf</code> defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
 
 <ol>
 <li>Call the linux tool <code>logrotate</code></li>
 <li>Upload the logfiles to dropbox</li>
 </ol>
 
-<p>The central control script <code>smeter.sh</code> calls the <code>logrotate.sh</code> after the picture upload.</p>
+<p>The central control script <code>smeter.sh</code> calls the <code>logrotate.sh</code> before the duty cycle ends and the system shuts down.</p>
 
                 </div>
             </div>
