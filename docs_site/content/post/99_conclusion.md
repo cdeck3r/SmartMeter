@@ -10,7 +10,7 @@ SmartMeter records the overall electricity consumption in a family home. It augm
 
 The list below displays the achieved objectives:
 
-* [ ] reliably taking pictures
+* [X] reliably taking pictures
 * [ ] data management across various systems at home as well as on the Internet
 * [ ] AI based optical character recognition
 * [ ] unattended operation
