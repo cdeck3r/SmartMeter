@@ -11,6 +11,10 @@ Install the project's SmartMeter software on the Raspberry Pi.
 
 * Copy the content of `raspi` directory onto the Raspberry Pi
 
+```bash
+curl -L https://raw.githubusercontent.com/cdeck3r/SmartMeter/master/raspi/install.sh | bash 
+```
+
 ##### **Setup Dropbox Uploader**
 
 GitHub repo of Dropbox Uploader: https://github.com/andreafabrizi/Dropbox-Uploader
@@ -38,14 +42,13 @@ crontab smartmeter.crontab
 crontab -l
 ```
 
-The last line verifies that the cronjob got installed. The example schedules the script every 15 minutes within a full hour starting at minute 5. So, it runs 0:05, 0:20, 0:35, ...
+The last line verifies that the cronjob got installed. The example schedules the script at reboot and starts it 2 min later to give time for the OS to bring all ressources online.
 
-Finally, run the command below to remove the user's crontab. Note: This will remove all entries.
+Run the command below to remove the user's crontab. Note: This will remove all entries.
 
 ```bash
 crontab -r
 ```
-
 
 ## Bare Raspberry Pi Setup 
 
