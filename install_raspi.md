@@ -9,7 +9,7 @@ Tested with
 
 Install the project's SmartMeter software on the Raspberry Pi.
 
-* Copy the content of `raspi` directory onto the Raspberry Pi
+Copy the content of repo's `raspi` directory onto the Raspberry Pi into the `$HOME/smartmeter` directory. Alternatively, you may want to run the install script. 
 
 ```bash
 curl -L https://raw.githubusercontent.com/cdeck3r/SmartMeter/master/raspi/install.sh | bash 
