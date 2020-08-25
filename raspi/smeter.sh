@@ -82,7 +82,7 @@ do
     fi
     light_off
 
-    # upload to dropbox
+    # upload to dropbox    
     "${SCRIPT_DIR}"/fileservice.sh
     # retry, if network problem
     if [[ $? -eq 2 ]]; then
@@ -95,10 +95,10 @@ do
     fi
     
     # sleep until next iteration
-    # 13 min to account for delay on upload / upload retry 
-    if [ $c -le 2 ]; then
-        log_echo "INFO" "Wait for next iteration."
-        sleep 780
+    if [[ $c -le 2 ]]; then
+        SECS=$(sec_until_next_quarter)
+        log_echo "INFO" "Iteration $c done. Wait $SECS for next iteration."
+        sleep $SECS
     fi
 done
 
@@ -113,6 +113,7 @@ fi
 # shutdown
 if [[ ${MAINTENANCE_MODE} -eq 0 ]]; then
     log_echo "INFO" "SmartMeter camera system shuts down."
-    sudo shutdown -h now
+    #sudo shutdown -h now
+    exit 0
 fi
 log_echo "INFO" "SmartMeter camera system ends in maintenance mode: ${MAINTENANCE_MODE}"

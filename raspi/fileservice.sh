@@ -68,6 +68,7 @@ fi
 # skip if file already exist on dropbox
 for img_file in "${IMG_DIR}"/*.png; do
     fname=$(basename "${img_file}")
+    log_echo "INFO" "Upload to Dropbox: ${fname}"
     "${DBU}" -f "${DBU_CFG}" -s upload "$img_file" "${DBU_DIR}/${fname}"
 done
 

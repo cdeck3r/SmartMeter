@@ -24,3 +24,25 @@ assert_on_raspi () {
         exit 1
     fi 
 }
+
+#
+# Sleep routines
+# 
+
+# Computes the now epoch timestamp mod a given number of seconds
+# Ex. given 3600 as parameter, it computes the now timestamp modulo 3600
+# and yields the number of seconds within the current hour.
+#
+# Param #1: seconds
+now_sec_modulo () {
+    local SECS=$1
+    echo $(( $(date +%s) % $SECS ))
+}
+
+sec_in_current_quarter () {
+    echo $(now_sec_modulo 900)
+}
+
+sec_until_next_quarter () {
+    echo $(( 900 - $(sec_in_current_quarter) ))
+}
