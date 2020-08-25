@@ -14,7 +14,7 @@ img {
 </style>
 
 
-The SmartMeter software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script `smeter.sh` controls all functions.
+The SmartMeter camera software runs on the Raspberry Pi. It takes pictures and uploads them to Dropbox. The central script `smeter.sh` controls all functions.
 
 For installation instruction see [install_raspi.md](https://github.com/cdeck3r/SmartMeter/blob/master/install_raspi.md).
 
