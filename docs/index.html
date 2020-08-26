@@ -441,7 +441,7 @@ img {
 
 <h3 id="scheduling">Scheduling</h3>
 
-<p>An external timer switch powers-on the Raspberry Pi at pre-defined time. After the reboot the crontab runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time, the external timer switch powers-off.</p>
+<p>An external timer switch powers-on the Raspberry Pi at a pre-defined time. After the reboot the cron scheduler runs the central control script <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/smeter.sh"><code>smeter.sh</code></a>, which takes the pictures (<code>takepicture.sh</code>) and uploads them to Dropbox (<code>fileservice.sh</code>). At the end, the script shuts down the Raspberry Pi. At a later time the external timer switch powers-off.</p>
 
 <p>The timer switch has only 28 slots for defining on and off times. This is not sufficient for 15 min intervals per hour. We define a coarse-grained timer duty cycle of 50% within 1 hour, which consists of 30 min power-on duty and 30 min when the Raspberry is powered off. In the power-on duty time, the <code>smeter.sh</code> control script performs three measurement activities at 0, 15, 30 min after the start. This schedule achieves three 15 min intervals and leaves out one within a hour. The exact schedule deviates a bit from this description in order to give time management activities to take place before the external timer switch powers-off. The sleep delay after the cron scheduler starts gives time for the OS to bring the ressources online. The following figure depicts the schedule.</p>
 
@@ -467,10 +467,10 @@ img {
 
 <h3 id="log-rotation">Log Rotation</h3>
 
-<p>We use standard linux tool <code>logrotate</code>. The config file <code>logrotate.conf</code> defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
+<p>We use standard linux tool <code>logrotate</code>. The config file <a href="https://github.com/cdeck3r/SmartMeter/blob/master/raspi/logrotate.sh"><code>logrotate.conf</code></a> defines the parameters and resides in the same directory as the other scripts. <code>logrotate.sh</code> has the following functions:</p>
 
 <ol>
-<li>Call the linux tool <code>logrotate</code></li>
+<li>Call the linux tool <code>logrotate</code> on the <code>log</code> directory</li>
 <li>Upload the logfiles to dropbox</li>
 </ol>
 
