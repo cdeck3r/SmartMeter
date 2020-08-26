@@ -6,10 +6,32 @@
     <description>Recent content in Sections on SmartMeter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cdeck3r.com/SmartMeter/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI-based OCR</title>
+      <link>https://cdeck3r.com/SmartMeter/post/30_aiocr/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/30_aiocr/</guid>
+      <description>img { max-width: 100%; height: auto; }  Content
+ AI based optical character recognition Methods and tools for AI based image processing Assess the maturity and ease of use of available tools  &amp;hellip; tbd &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>SmartMeter Server Software</title>
+      <link>https://cdeck3r.com/SmartMeter/post/20_server_software/</link>
+      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cdeck3r.com/SmartMeter/post/20_server_software/</guid>
+      <description>img { max-width: 100%; height: auto; }  The SmartMeter server software runs on a Linux server. It downloads pictures from Dropbox and processes them using an AI-based OCR approach.
+For installation instruction see install_server.md.
+Software Design &amp;hellip; tbd &amp;hellip;
+Report &amp;hellip; tbd &amp;hellip;</description>
+    </item>
     
     <item>
       <title>SmartMeter Camera Software</title>
