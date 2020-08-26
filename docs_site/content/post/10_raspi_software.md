@@ -46,7 +46,7 @@ The [`maintenance.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/m
 
 ### Log Rotation
 
-We use standard linux tool `logrotate`. The config file [`logrotate.conf`](https://github.com/cdeck3r/SmartMeter/blob/master/raspi/logrotate.sh) defines the parameters and resides in the same directory as the other scripts. `logrotate.sh` has the following functions:
+We use standard linux tool `logrotate`. The config file `logrotate.conf` defines the parameters and resides in the same directory as the other scripts. `logrotate.sh` has the following functions:
 
 1. Call the linux tool `logrotate` on the `log` directory
 1. Upload the logfiles to dropbox
