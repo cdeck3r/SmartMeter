@@ -22,9 +22,15 @@ cd "$SCRIPT_DIR" || exit
 SCRIPT_NAME=$0
 
 # variables
-CONF_FILE="${HOME}"/smartmeter/logrotate.conf
-STATE_FILE="${HOME}"/smartmeter/log/logrotate.state
-LOG_FILE="${HOME}"/smartmeter/log/logrotate.log
+LOG_DIR=${SCRIPT_DIR}/log
+CONF_FILE=${SCRIPT_DIR}/logrotate.conf
+STATE_FILE=${LOG_DIR}/logrotate.state
+LOG_FILE=${LOG_DIR}/logrotate.log
+
+# logfile upload
+DBU=${SCRIPT_DIR}/dropbox_uploader.sh
+DBU_CFG=~/.dropbox_uploader
+DBU_DIR=log
 
 #####################################################
 # Include Helper functions
@@ -41,4 +47,20 @@ assert_on_raspi
 
 log_echo "INFO" "logrotate starts: ${HOME}/smartmeter/log"
 /usr/sbin/logrotate -s "${STATE_FILE}" -l "${LOG_FILE}" "${CONF_FILE}"
-exit 0
+
+
+# let's upload compressed logfiles
+# skip if file already exist on dropbox
+for compress_logfile in "${LOG_DIR}"/*.bz2; do
+    fname=$(basename "${compress_logfile}")
+    log_echo "INFO" "Upload to Dropbox: ${fname}"
+    "${DBU}" -f "${DBU_CFG}" -s upload "${compress_logfile}" "${DBU_DIR}/${fname}"
+done
+
+# let's upload current logfiles
+# overwrite, if exists
+for logfile in "${LOG_DIR}"/*.log; do
+    fname=$(basename "${logfile}")
+    log_echo "INFO" "Upload to Dropbox: ${fname}"
+    "${DBU}" -f "${DBU_CFG}" upload "${logfile}" "${DBU_DIR}/${fname}"
+done
