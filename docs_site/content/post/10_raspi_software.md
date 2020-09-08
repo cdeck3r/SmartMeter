@@ -51,5 +51,34 @@ We use standard linux tool `logrotate`. The config file `logrotate.conf` defines
 1. Call the linux tool `logrotate` on the `log` directory
 1. Upload the logfiles to dropbox
 
-The central control script `smeter.sh` calls the `logrotate.sh` before the duty cycle ends and the system shuts down.
+The central control script `smeter.sh` calls `logrotate.sh` before the duty cycle ends and the system shuts down.
 
+### Logfile Analysis
+
+The scripts like `smeter.sh`, `fileservice.sh`, `logrotate.sh` report their actions in a logfile. A typical log line looks like the following example.
+
+```
+2020-08-31 01:02:01,1598828521 - /home/pi/smartmeter/smeter.sh - INFO - SmartMeter camera system starts.
+```
+
+Apart from regular log lines the logfiles contain all other script output as well. Run the following command to cleanup the logfiles and only store log lines in `smartmeter.log`.
+```bash
+src/filterlog.sh > smartmeter.log
+```
+
+An R jupyter notebook runs the analysis and computes various summary statistics. An important output is the boxplot figure below. It shows the varying runtime of different scripts. One gains insight in the regular runtime behavior of the SmartMeter software.
+
+<img src="img/activity_durations.png" alt="Durations of the scripts as result of logfile analysis" />
+
+The following table displays summary stats for each script. Each number reports the runtime in seconds.
+
+|         | `smeter.sh` | `fileservice.sh` | `logrotate.sh` |
+|---------|-----------|----------------|--------------|
+| Min.    | 1738      | 38.0           | 9.00         |
+| 1st Qu. | 1739      | 39.0           | 10.00        |
+| Median  | 1740      | 41.0           | 10.00        |
+| Mean    | 1742      | 41.1           | 10.96        |
+| 3rd Qu. | 1743      | 42.0           | 11.00        |
+| Max.    | 1752      | 52.0           | 17.00        |
+
+The complete logfile analysis is available as an R jupyter notebook. The notebook runs on [mybinder](https://mybinder.org/). Just click the badge below to run a recent analysis.
