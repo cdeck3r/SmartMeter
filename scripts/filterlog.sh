@@ -2,6 +2,7 @@
 
 #
 # Removes noise from raspi logfile and keeps log lines only
+# The script first downloads the logfiles from Dropbox using wget
 # 
 # Author: cdeck3r
 #
@@ -39,6 +40,9 @@ LOG_FILES="smartmeter.log-*.bz2"
 # Main program
 #####################################################
 
+# check for installed program
+# Source: https://stackoverflow.com/a/677212
+command -v "wget" >/dev/null 2>&1 || { echo >&2 "I require wget but it's not installed.  Abort."; exit 1; }
 
 # ensure WORK_DIR exists and is empty
 mkdir -p "${WORK_DIR}" || exit
