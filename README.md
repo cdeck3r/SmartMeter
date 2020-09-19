@@ -2,9 +2,11 @@
 
 Our goal is to improve our energy footprint. Therefore, we aim for a fine-grained tracking of the electricity consumption in a family home. 
 
-The project has its own website under https://cdeck3r.com/SmartMeter.
+Quicklinks:
 
-The [Github's project board](https://github.com/cdeck3r/SmartMeter/projects/1) tracks the development tasks.
+* project website: https://cdeck3r.com/SmartMeter.
+* development task tracking: [Github's project board](https://github.com/cdeck3r/SmartMeter/projects/1)
+* run logfile analysis: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cdeck3r/SmartMeter/master?urlpath=lab/tree/notebooks/LogAnalysis.ipynb)
 
 ## Project Description
 
@@ -30,7 +32,7 @@ Learning goals
 
 ## Hardware
 
-The COTS camera-based embedded system is a [Raspberry Pi 3](https://en.wikipedia.org/wiki/Raspberry_Pi) with a [Raspberry Pi camera module] (https://www.geeetech.com/wiki/index.php/Raspberry_Pi_Camera_Module) connected to it. Follow the [instruction](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) for connecting and first steps using the Pi camera module
+The COTS camera-based embedded system is a [Raspberry Pi 3](https://en.wikipedia.org/wiki/Raspberry_Pi) with a [Raspberry Pi camera module](https://www.geeetech.com/wiki/index.php/Raspberry_Pi_Camera_Module) connected to it. Follow the [instruction](https://projects.raspberrypi.org/en/projects/getting-started-with-picamera) for connecting and first steps using the Pi camera module
 
 Images are stored on Dropbox and processed by a cloud server on the Internet.
 

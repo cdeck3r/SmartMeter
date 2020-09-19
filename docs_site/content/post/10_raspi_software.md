@@ -81,4 +81,6 @@ The following table displays summary stats for each script. Each number reports 
 | 3rd Qu. | 1743      | 42.0           | 11.00        |
 | Max.    | 1752      | 52.0           | 17.00        |
 
-The complete logfile analysis is available as an R jupyter notebook. The notebook runs on [mybinder](https://mybinder.org/). Just click the badge below to run a recent analysis.
+The complete logfile analysis is available as an R jupyter notebook. The notebook runs on [mybinder](https://mybinder.org/) and downloads recent logfiles from Dropbox. Just click the badge below to run a recent analysis.
+
+**Run logfile analysis:** [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cdeck3r/SmartMeter/master?urlpath=lab/tree/notebooks/LogAnalysis.ipynb)
