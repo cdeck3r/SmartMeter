@@ -38,6 +38,13 @@ BOTH_FILELST=/tmp/both_flist.txt
 
 source "${SCRIPT_DIR}/funcs.sh"
 
+cleanup() {
+    # cleanup
+    rm -rf "${REMOTE_FILELST}"
+    rm -rf "${LOCAL_FILELST}"
+    rm -rf "${BOTH_FILELST}"
+}
+
 #####################################################
 # Main program
 #####################################################
@@ -72,6 +79,7 @@ log_echo "INFO" "Download image list: ${REMOTE_FILELST}"
 remote_flist_count=$(cat "${REMOTE_FILELST}" | wc -l)
 if [ "$remote_flist_count" -eq 0 ]; then
     log_echo "INFO" "No files found on Dropbox. Stop."
+    cleanup
     exit 0
 fi
 
@@ -94,8 +102,15 @@ find "${IMG_DIR}" -type f -printf "%s %f\n" | sort > "${LOCAL_FILELST}"
 # list the files found in both
 comm -12 "${REMOTE_FILELST}" "${LOCAL_FILELST}" > "${BOTH_FILELST}"
 
+# test number of common files 
+both_flist_count=$(cat "${BOTH_FILELST}" | wc -l)
+if [ "$both_flist_count" -eq 0 ]; then
+    log_echo "INFO" "No files to delete found. Stop."
+    cleanup
+    exit 0
+fi
+
 # we can now safely remove the remote files
-# not very elegant, but it works
 for f in $(cat "${BOTH_FILELST}" | cut -d' ' -f2) ; do 
   rmfile="${DBU_DIR}"/"$f"
   log_echo "INFO" "Delete file on Dropbox: ${rmfile}"
@@ -103,6 +118,4 @@ for f in $(cat "${BOTH_FILELST}" | cut -d' ' -f2) ; do
 done
 
 # cleanup
-rm -rf "${REMOTE_FILELST}"
-rm -rf "${LOCAL_FILELST}"
-rm -rf "${BOTH_FILELST}"
+cleanup
