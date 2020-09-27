@@ -94,6 +94,9 @@ do
         fi
     fi
     
+    # log temperature
+    "${SCRIPT_DIR}"/templog.sh
+    
     # sleep until next iteration
     if [[ $c -le 2 ]]; then
         SECS=$(sec_until_next_quarter)
