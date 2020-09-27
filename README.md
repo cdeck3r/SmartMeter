@@ -59,7 +59,7 @@ For full instructions see
 
 Dropbox provides 2GB storage space for free. If you run out of space, you may use the SmartMeter's backup script. It downloads all images, compares the downloaded files using their names and file sizes with the remote ones. It will delete the remote files, if found identical with the local ones (acc. to name and size).
 
-Backup script: `src/backup_dropbox/backup_dropbox.sh`
+Backup script: [`src/backup_dropbox/backup_dropbox.sh`](https://github.com/cdeck3r/SmartMeter/blob/master/src/backup_dropbox/backup_dropbox.sh)
 
 For usage, first, check and alter (if necessary) config variables in the script's variables section. Afterwards, start the script, simply by running:
 ```bash
