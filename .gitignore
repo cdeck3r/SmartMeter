@@ -8,6 +8,7 @@ tools
 raspios
 install
 scripts/.snakemake/*
+images
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,java,code-java,r
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,java,code-java,r
