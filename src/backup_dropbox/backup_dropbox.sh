@@ -52,6 +52,10 @@ cleanup() {
 # first things first
 assert_in_docker
 
+# check for installed program
+# Source: https://stackoverflow.com/a/677212
+command -v "curl" >/dev/null 2>&1 || { echo >&2 "I require curl but it's not installed.  Abort."; exit 1; }
+
 # check connection to dropbox.com
 curl -L dropbox.com >/dev/null 2>&1 && { log_echo "INFO" "Website dropbox.com is reachable."; } || { log_echo "ERROR" "Error retrieving dropbox.com.  Abort."; exit 2; }
 
