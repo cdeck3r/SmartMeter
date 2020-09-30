@@ -93,6 +93,9 @@ do
             log_echo "ERROR" "Re-occuring network problem. No further retry."
         fi
     fi
+
+    # log space on dropbox
+    "${SCRIPT_DIR}"/dropboxlog.sh
     
     # log temperature
     "${SCRIPT_DIR}"/templog.sh
